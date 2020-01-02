@@ -40,3 +40,4 @@ console.log(funcionario.supervisores);
 console.log(funcionario.baterPonto(8));
 console.log(funcionario.baterPonto(9));
 // funcionario = {}
+//# sourceMappingURL=tipo-objetos.js.map

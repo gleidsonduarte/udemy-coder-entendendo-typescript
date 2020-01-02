@@ -108,3 +108,68 @@ usuario = {
     nome: 'Maria'
 }
 console.log(usuario)
+
+// Union Types
+let nota: number | string = 10
+console.log(`Minha nota é ${nota}!`)
+nota = '10'
+console.log(`Minha nota é ${nota}`)
+// nota = true
+
+// Checando tipos
+let valor = 30
+
+if (typeof valor == "number") {
+    console.log("É um number!")
+} else {
+    console.log(typeof valor)
+}
+
+// Tipo de retorno never
+
+function falha(msg: string): never {
+    throw new Error(msg)
+}
+
+const produto = {
+    nome: 'Sabão',
+    preco: 4,
+    validarProduto() {
+        if (!this.nome || this.nome.trim().length == 0) {
+            falha('Precisa ter um nome')
+        }
+        if (this.preco <= 0) {
+            falha('Preço inválido')
+        }
+    }
+}
+
+produto.validarProduto()
+
+let altura = 12
+// altura = null
+
+let alturaOpcional: null | number = 12
+alturaOpcional = null
+
+type Contato = {
+    nome: string,
+    tel1: string,
+    tel2: string | null
+}
+
+const contato1: Contato = {
+    nome: 'Fulano',
+    tel1: '98765432',
+    tel2: null
+}
+
+console.log(contato1.nome)
+console.log(contato1.tel1)
+console.log(contato1.tel2)
+
+let podeSerNulo = null // any!
+podeSerNulo = 12
+console.log(podeSerNulo)
+podeSerNulo = 'abc'
+console.log(podeSerNulo)

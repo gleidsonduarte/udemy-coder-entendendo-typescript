@@ -87,3 +87,52 @@ usuario = {
     nome: 'Maria'
 };
 console.log(usuario);
+// Union Types
+var nota = 10;
+console.log("Minha nota \u00E9 " + nota + "!");
+nota = '10';
+console.log("Minha nota \u00E9 " + nota);
+// nota = true
+// Checando tipos
+var valor = 30;
+if (typeof valor == "number") {
+    console.log("É um number!");
+}
+else {
+    console.log(typeof valor);
+}
+// Tipo de retorno never
+function falha(msg) {
+    throw new Error(msg);
+}
+var produto = {
+    nome: 'Sabão',
+    preco: 4,
+    validarProduto: function () {
+        if (!this.nome || this.nome.trim().length == 0) {
+            falha('Precisa ter um nome');
+        }
+        if (this.preco <= 0) {
+            falha('Preço inválido');
+        }
+    }
+};
+produto.validarProduto();
+var altura = 12;
+// altura = null
+var alturaOpcional = 12;
+alturaOpcional = null;
+var contato1 = {
+    nome: 'Fulano',
+    tel1: '98765432',
+    tel2: null
+};
+console.log(contato1.nome);
+console.log(contato1.tel1);
+console.log(contato1.tel2);
+var podeSerNulo = null; // any!
+podeSerNulo = 12;
+console.log(podeSerNulo);
+podeSerNulo = 'abc';
+console.log(podeSerNulo);
+//# sourceMappingURL=tipos.js.map
