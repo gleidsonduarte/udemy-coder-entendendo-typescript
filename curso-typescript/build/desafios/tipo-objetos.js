@@ -25,9 +25,9 @@ console.log(ponto(7))
 console.log(ponto(18))
 */
 // Como o professor do curso resolveu o desafio
-let funcionario = {
+var funcionario = {
     supervisores: ['Ana', 'Fernando'],
-    baterPonto(horario) {
+    baterPonto: function (horario) {
         if (horario <= 8) {
             return 'Ponto normal';
         }
