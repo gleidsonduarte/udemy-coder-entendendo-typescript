@@ -112,3 +112,37 @@ function tuplaParam2(...params: [number, string, boolean]) {
 }
 
 tuplaParam2(...tupla)
+
+// Destructuring (array)
+const caracteristicas = ['Motor Zetec 1.8', 2020]
+// const motor = caracteristicas[0]
+// const ano = caracteristicas[1]
+
+const [motor, ano] = caracteristicas
+
+const item = {
+    nome:'SSD 480GB',
+    preco:200,
+    caracteristicas: {
+        w: 'Importado'
+    }
+}
+
+const nomeItem = item.nome
+const preco = item.preco
+const { nome: n, preco: p, caracteristicas: { w } } = item
+console.log(n)
+console.log(p)
+console.log(w)
+
+const usuarioID: string = 'SuporteCod3r'
+const notificacoes: string = '19'
+// const boasVindas = 'Boas vindas ' + usuarioID + ' Notificações: ' + notificacoes
+
+const boasVindas = `
+Boas vindas ${usuarioID},
+Notificações: ${parseInt(notificacoes) > 9 ? '+9' : notificacoes}
+`
+console.log(boasVindas)
+console.log(`${(1 + 1) * 30}`)
+console.log(`Motor: ${caracteristicas[0]}`)
