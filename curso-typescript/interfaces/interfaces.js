@@ -45,4 +45,35 @@ console.log(potencia(3, 10));
 console.log(Math.pow(3, 10));
 console.log(Math.pow(3, 10));
 console.log(Array(10).fill(3).reduce((t, a) => t * a));
+class RealA {
+    a() { }
+}
+class RealB {
+    b() { }
+}
+class RealABC {
+    a() { }
+    b() { }
+    c() { }
+}
+class AbstrataABD {
+    a() { }
+    b() { }
+}
+Object.prototype.log = function () {
+    console.log(this.toString());
+};
+const x = 2;
+const y = 3;
+const z = 4;
+x.log();
+y.log();
+z.log();
+const cli = {
+    nome: 'Pedro',
+    toString() {
+        return this.nome;
+    }
+};
+cli.log();
 //# sourceMappingURL=interfaces.js.map

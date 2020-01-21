@@ -71,3 +71,60 @@ console.log(Math.pow(3, 10))
 console.log(3 ** 10)
 console.log(Array(10).fill(3).reduce((t, a) => t * a))
 
+// Herança entre interfaces
+interface A {
+    a(): void
+}
+
+interface B {
+    b(): void
+}
+
+interface ABC extends A, B {
+    c(): void
+}
+
+class RealA implements A {
+    a(): void {}
+}
+
+class RealB implements B {
+    b(): void {}
+}
+
+class RealABC implements A {
+    a(): void {}
+    b(): void {}
+    c(): void {}
+}
+
+abstract class AbstrataABD implements A, B {
+    a(): void {}
+    b(): void {}
+    abstract d(): void
+}
+
+interface Object {
+    log(): void
+}
+
+Object.prototype.log = function() {
+    console.log(this.toString())
+}
+
+const x = 2
+const y = 3
+const z = 4
+
+x.log()
+y.log()
+z.log()
+
+const cli = {
+    nome: 'Pedro',
+    toString() {
+        return this.nome
+    }
+}
+
+cli.log()
